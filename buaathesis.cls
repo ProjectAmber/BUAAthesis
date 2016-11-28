@@ -32,7 +32,7 @@ The LaTeX template for thesis of BUAA]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
 % 引用ctexbook及基本设置
-\LoadClass[zihao=-4,a4paper]{ctexbook}[2007/10/19]
+\LoadClass[zihao=-4,a4paper,fontset=windows]{ctexbook}[2007/10/19]
 
 %%%%%%%%%% global package %%%%%%%%%%
 % 全局通用宏包
@@ -44,7 +44,7 @@ The LaTeX template for thesis of BUAA]
 
 \RequirePackage{amsmath,amssymb,amsfonts,mathrsfs,bm}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
-\RequirePackage{txfonts}
+\RequirePackage{anyfontsize}
 
 % 主要字体为Times New Roman和宋体
 % 模板某些标题需要华文行楷和32号字
