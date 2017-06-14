@@ -988,8 +988,10 @@ The LaTeX template for thesis of BUAA]
 % 首页重定义
 
 \renewcommand{\maketitle}{%
+    \pagenumbering{Alph}
     \titlech
     \ifbuaa@bachelor
+        \pagenumbering{alph}
         \buaa@bachelor@assign     %本科生论文任务书
         \frontmatter
         \announce
