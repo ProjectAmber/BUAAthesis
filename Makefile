@@ -1,6 +1,6 @@
 all:
 	@find -name '*.tex' -printf 'output/%h\n' | sort | uniq | xargs mkdir -p
-	@latexmk -xelatex -output-directory=output
+	@SOURCE_DATE_EPOCH=0 latexmk -xelatex -output-directory=output
 
 clean:
 	@rm -rf output/
