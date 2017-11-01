@@ -544,62 +544,62 @@ The LaTeX template for thesis of BUAA]
             \centerline{\heiti\zihao{-3}\buaa@thesisdateyear ~~年~~\buaa@thesisdatemonth ~~月}
         \end{center}
     \else
-        \begin{titlepage}
-            \begin{center}
-                \begin{spacing}{1.5}
-                    {
-                        \zihao{5}\heiti
-                        \begin{flushleft}
-                            中图分类号：\buaa@category  \\
-							%中图分类号：\buaa@category\hfill 密级\ding{73}~~\buaa@mibao \\ % 保密论文时用此行代码替换上行代码即可
-                            论\,\,文\,\,编\,\,号：\buaa@thesisID\\
-                        \end{flushleft}
-                    }
-                    \vskip 80bp
-                    \includegraphics[width=.5\textwidth]{figure/buaaname.jpg}
-                    \vskip 30bp
-                    \centerline{\zihao{0}\ziju{0.2}\hwxingkai\buaa@degree 论文}
-                    ~~\\
-                    %\vskip 100bp
-                    \vspace*{\stretch{5}}
-                    \begin{minipage}[h]{.85\textwidth}
-                        \begin{spacing}{3}
-                            % actually, it should be 1.5, but I think 3 will be prefect.
-                            \centering{\xiaochuhao\songti \buaa@thesistitle}
-                        \end{spacing}
-                    \end{minipage}
-                    %\vspace{5bp}
-                    % the space between title and subtitle, however, it seems doesn't work.
-                    \begin{minipage}[h]{.75\textwidth}
-                        \begin{spacing}{1.5}
-                            \centering{\heiti\zihao{3}\buaa@thesissubtitle}
-                        \end{spacing}
-                    \end{minipage}
-                    \vspace*{\stretch{4}}
-                    ~~\\
-                    %\vskip 80bp
-                    {
-                        \heiti\zihao{4}\ziju{0.2}
-                        \ifbuaa@twoteacher
-                            \begin{tabular}[b]{ll}
-                                作~~者~~姓~~名~~ & \buaa@thesisauthor\\[.3ex]
-                                学~~科~~专~~业~~ & \buaa@major\\[.3ex]
-                                指~~导~~教~~师~~ & \buaa@teacher\quad\buaa@teacherdegree\\[.3ex]
-                                ~~ & \buaa@subteacher\quad\buaa@subteacherdegree\\[.3ex]
-                                培~~养~~院~~系~~ & \buaa@school 学院\\
-                            \end{tabular}
-                        \else
-                            \begin{tabular}[b]{ll}
-                                作~~者~~姓~~名~~ & \buaa@thesisauthor\\[.4ex]
-                                学~~科~~专~~业~~ & \buaa@major\\[.4ex]
-                                指~~导~~教~~师~~ & \buaa@teacher \quad\buaa@teacherdegree\\[.4ex]
-                                培~~养~~院~~系~~ & \buaa@school 学院\\
-                            \end{tabular}
-                        \fi
-                    }
-                \end{spacing}
-            \end{center}
-        \end{titlepage}
+        \clearemptydoublepage
+        \thispagestyle{empty}
+        \begin{center}
+            \begin{spacing}{1.5}
+                {
+                    \zihao{5}\heiti
+                    \begin{flushleft}
+                        中图分类号：\buaa@category  \\
+						%中图分类号：\buaa@category\hfill 密级\ding{73}~~\buaa@mibao \\ % 保密论文时用此行代码替换上行代码即可
+                        论\,\,文\,\,编\,\,号：\buaa@thesisID\\
+                    \end{flushleft}
+                }
+                \vskip 80bp
+                \includegraphics[width=.5\textwidth]{figure/buaaname.jpg}
+                \vskip 30bp
+                \centerline{\zihao{0}\ziju{0.2}\hwxingkai\buaa@degree 论文}
+                ~~\\
+                %\vskip 100bp
+                \vspace*{\stretch{5}}
+                \begin{minipage}[h]{.85\textwidth}
+                    \begin{spacing}{3}
+                        % actually, it should be 1.5, but I think 3 will be prefect.
+                        \centering{\xiaochuhao\songti \buaa@thesistitle}
+                    \end{spacing}
+                \end{minipage}
+                %\vspace{5bp}
+                % the space between title and subtitle, however, it seems doesn't work.
+                \begin{minipage}[h]{.75\textwidth}
+                    \begin{spacing}{1.5}
+                        \centering{\heiti\zihao{3}\buaa@thesissubtitle}
+                    \end{spacing}
+                \end{minipage}
+                \vspace*{\stretch{4}}
+                ~~\\
+                %\vskip 80bp
+                {
+                    \heiti\zihao{4}\ziju{0.2}
+                    \ifbuaa@twoteacher
+                        \begin{tabular}[b]{ll}
+                            作~~者~~姓~~名~~ & \buaa@thesisauthor\\[.3ex]
+                            学~~科~~专~~业~~ & \buaa@major\\[.3ex]
+                            指~~导~~教~~师~~ & \buaa@teacher\quad\buaa@teacherdegree\\[.3ex]
+                            ~~ & \buaa@subteacher\quad\buaa@subteacherdegree\\[.3ex]
+                            培~~养~~院~~系~~ & \buaa@school 学院\\
+                        \end{tabular}
+                    \else
+                        \begin{tabular}[b]{ll}
+                            作~~者~~姓~~名~~ & \buaa@thesisauthor\\[.4ex]
+                            学~~科~~专~~业~~ & \buaa@major\\[.4ex]
+                            指~~导~~教~~师~~ & \buaa@teacher \quad\buaa@teacherdegree\\[.4ex]
+                            培~~养~~院~~系~~ & \buaa@school 学院\\
+                        \end{tabular}
+                    \fi
+                }
+            \end{spacing}
+        \end{center}
     \fi
 }
 
