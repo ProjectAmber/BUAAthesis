@@ -240,11 +240,7 @@ The LaTeX template for thesis of BUAA]
 \fi
 \hypersetup{
     bookmarksnumbered,
-    bookmarksopen,
-    pdftitle={BUAA thesis},
-    pdfauthor={BHOSC},
-    pdfsubject={北航毕业设计论文},
-    pdfcreator={LaTeXed~By~BHOSC}
+    bookmarksopen
 }
 
 %%%%%%%%%% reference %%%%%%%%%%
