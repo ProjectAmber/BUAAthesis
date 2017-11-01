@@ -552,7 +552,7 @@ The LaTeX template for thesis of BUAA]
                     \zihao{5}\heiti
                     \begin{flushleft}
                         中图分类号：\buaa@category  \\
-						%中图分类号：\buaa@category\hfill 密级\ding{73}~~\buaa@mibao \\ % 保密论文时用此行代码替换上行代码即可
+                        %中图分类号：\buaa@category\hfill 密级\ding{73}~~\buaa@mibao \\ % 保密论文时用此行代码替换上行代码即可
                         论\,\,文\,\,编\,\,号：\buaa@thesisID\\
                     \end{flushleft}
                 }
@@ -610,8 +610,8 @@ The LaTeX template for thesis of BUAA]
     \vspace*{\stretch{1}}
     \begin{center}
     \begin{minipage}[h]{.8\textwidth}
-    	\begin{spacing}{2}
-        	\centering{\zihao{-2}\textbf{\buaa@thesistitleeng}}
+        \begin{spacing}{2}
+            \centering{\zihao{-2}\textbf{\buaa@thesistitleeng}}
         \end{spacing}
     \end{minipage}
     \vskip 20bp
