@@ -553,7 +553,7 @@ The LaTeX template for thesis of BUAA]
                     \end{flushleft}
                 }
                 \vskip 80bp
-                \includegraphics[width=.5\textwidth]{figure/buaaname.jpg}
+                \includegraphics[width=.5\textwidth]{figure/buaaname.png}
                 \vskip 30bp
                 \centerline{\zihao{0}\ziju{0.2}\hwxingkai\buaa@degree 论文}
                 ~~\\
