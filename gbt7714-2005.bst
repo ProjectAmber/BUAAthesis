@@ -121,7 +121,7 @@ FUNCTION {cap.space}            {" "}
 FUNCTION {cap.period}           {"\@. "}
 FUNCTION {cap.comma}            {"\@, "}
 FUNCTION {cap.colon}            {"\thinspace{}\textnormal{: }"}
-FUNCTION {cap.double.slash}     {" //\thinspace{}"}
+FUNCTION {cap.double.slash}     {"\@. "}
 FUNCTION {cap.dash}             {"\thinspace{}\textnormal{--}\thinspace{}"}
 
 % Predefined latex command used to format the style of bibitems
@@ -505,7 +505,7 @@ FUNCTION {is.online} {                            % int Entry::is_online() {
     true                                          %     return true;
   } {                                             %   } else {
     doi empty$ not {                              %     if (! empty(this.doi)) {
-      true                                        %       return true;
+      false                                       %       return false;
     } {                                           %     } else {
       false                                       %       return false;
     } if$                                         %     }
@@ -622,27 +622,27 @@ FUNCTION {format.names} {                         % String Entry::format_names(S
     namelist nameindex "{jj}" format.name$        %     tmp = format_name(namelist, nameindex, "{jj}");
     remove.dots 'jrname :=                        %     jrname = remove_dots(tmp);
     namelist nameindex "{f}" format.name$         %     tmp = format_name(namelist, nameindex, "{f}");
-    remove.dots                                   %     tmp = remove_dots(tmp);
     'firstname :=                                 %     firstname = tmp;
     namelist nameindex "{ll}" format.name$        %     tmp = format_name(namelist, nameindex, "{ll}");
     'lastname :=                                  %     lastname = tmp;
     jrname empty$ not {                           %     if (! empty(jrname)) {
-      jrname * " " *                              %       result = result + jrname + " "
+      jrname * ". " *                             %       result = result + jrname + ". "
     } 'skip$ if$                                  %     }
     vonname empty$ not {                          %     if (! empty(vonname)) {
-      vonname * " " *                             %       result = result + vonname + " "
+      vonname * ". " *                            %       result = result + vonname + ". "
     } 'skip$ if$                                  %     }
     lastname empty$ not {                         %     if (! empty(lastname)) {
       lastname * " " *                            %       result = result + lastname + " "
     } 'skip$ if$                                  %     }
     firstname empty$ not {                        %     if (! empty(firstname)) {
-      firstname * " " *                           %       result = result + firstname + " "
+      firstname * ". " *                          %       result = result + firstname + ". "
     } 'skip$ if$                                  %     }
     trim.end                                      %     result = trim_end(result);
   } while$                                        %   }
   nameindex namecount < {                         %   if (nameindex < namecount) {
-    cap.et.al *                                   %     result = result + cap_et_al();
+    cap.et.al * "." *                             %     result = result + cap_et_al() + ".";
   } 'skip$ if$                                    %   }
+  " " *                                           %     result = result + " ";
 }                                                 % }
                                                   %
                                                   %
@@ -907,7 +907,6 @@ FUNCTION {output.author.or.editor} {              % void Entry::output_author_or
   'required :=                                    %   this.required = required;
   author empty$ not {                             %   if (! empty(this.author)) {
     author format.author write$                   %     write(format_author(this.author));
-    cap.period write$                             %     write(cap_period);
   } {                                             %   } else {
     editor empty$ not {                           %     if (! empty(this.editor)) {
       editor format.editor write$                 %       write(format_editor(this.editor));
@@ -928,7 +927,6 @@ FUNCTION {output.author} {                        % void Entry::output_author(in
   'required :=                                    %   this.required = required;
   author empty$ not {                             %   if (! empty(this.author)) {
     author format.author write$                   %     write(format_author(this.author));
-    cap.period write$                             %     write(cap_period);
   } {                                             %   } else {
     required {                                    %     if (required == 1) {
       "Require author: " cite$ * warning$         %       warning("Require author: " + this.cite);
@@ -944,7 +942,6 @@ FUNCTION {output.editor} {                        % void Entry::output_editor(in
   'required :=                                    %   this.required = required;
   editor empty$ not {                             %   if (! empty(this.editor)) {
     editor format.editor write$                   %     write(format_editor(this.editor));
-    cap.period write$                             %     write(cap_period);
   } {                                             %   } else {
     required {                                    %     if (required == 1) {
       "Require editor: " cite$ * warning$         %       warning("Require editor: " + this.cite);
@@ -1359,7 +1356,7 @@ FUNCTION {output.url.or.doi} {                    % void Entry::output_url_or_do
     cap.period write$                             %     write(cap_period);
     url format.url write$                         %     write(format_url(this.url));
   } {                                             %   } else {
-    doi empty$ not {                              %     if (! empty(this.doi)) {
+    false {                                       %     if (false) {
       cap.period write$                           %       write(cap_period);
       cap.doi.url doi * format.url write$         %       write(format_url(cap_doi_url + this.doi));
     } {                                           %     } else {
